@@ -2,6 +2,10 @@ require 'sinatra'
 require './boot.rb'
 
 # ROUTES FOR ADMIN SECTION
+get '/' do
+	
+end
+
 get '/admin' do
   @products = Item.all
   erb :admin_index
@@ -9,6 +13,16 @@ end
 
 get '/about' do
 	erb :about
+end
+
+get '/products' do
+	@products = Item.all
+	erb :products
+end
+
+get '/purchase/:id' do
+	@product = Item.find(params[:id])
+	erb :purchase_form
 end
 
 get '/new_product' do
