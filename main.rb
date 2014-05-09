@@ -7,6 +7,10 @@ get '/admin' do
   erb :admin_index
 end
 
+get '/about' do
+	erb :about
+end
+
 get '/new_product' do
   @product = Item.new
   erb :product_form
