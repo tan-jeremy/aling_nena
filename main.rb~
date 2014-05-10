@@ -3,7 +3,7 @@ require './boot.rb'
 
 # ROUTES FOR ADMIN SECTION
 get '/' do
-	@products = Item.all
+	#@products = Item.all
 	erb :root
 end
 

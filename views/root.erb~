@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,45 +28,19 @@
       <div class="container">
         <div class="navbar-header">
          <a class="navbar-brand" href="#">Aling Nena</a>
-	 <a class="navbar-brand" href="/">Home</a>
+	 <a class="navbar-brand" href="#">Home</a>
 	 <a class="navbar-brand" href="/about">About</a>
 	 <a class="navbar-brand" href="/products">Products</a>
         </div>
       </div>
     </div>
-
     <div class="container">
-
-      <div class="admin">
-        <h1>Products</h1>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <td>Name</td>
-              <td>Price</td>
-              <td>Stock Level</td>
-            </tr>
-          </thead>
-          <tbody>
-          <% @products.each do |product| %>
-            <tr>
-              <td><%= product.name %></td>
-              <td><%= product.price %></td>
-              <td><%= product.quantity %></td>
-	      <td><a href="/purchase/<%= product.id %>" class="btn btn-default btn-primary">Purchase</a></td>
-            </tr>
-	  <% end %>          
-	  </tbody>          
-        </table>
-      </div>
-
-    </div><!-- /.container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+	<!-- <img>banner.jpg</img> goes here -->
+	<% @products.each do |product| %>
+	<ul>
+	 <li><a href="/purchase/<%= product.id %>"><%= product.name %></a></li>
+	</ul>
+	<% end %>
+    </div>
   </body>
 </html>
