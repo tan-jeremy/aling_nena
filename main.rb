@@ -26,6 +26,11 @@ get '/purchase/:id' do
 	erb :purchase_form
 end
 
+post '/change' do
+	@calc = MoneyCalculator.new params[:ones], params[:fives], params[:tens], params[:twenties], params[:fifties], params[:hundreds], params[:five_hundreds], params[:thousands]
+	erb :change
+end
+
 get '/new_product' do
   @product = Item.new
   erb :product_form

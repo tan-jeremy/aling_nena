@@ -3,8 +3,7 @@ require './boot.rb'
 
 # ROUTES FOR ADMIN SECTION
 get '/' do
-	x = Item.all
-	@products = [x]
+	@products = Item.all
 	erb :root
 end
 
@@ -24,7 +23,13 @@ end
 
 get '/purchase/:id' do
 	@product = Item.find(params[:id])
+
 	erb :purchase_form
+end
+
+post '/change' do
+	@calc = MoneyCalculator.new params[:ones], params[:fives], params[:tens], params[:twenties], params[:fifties], params[:hundreds], params[:five_hundreds], params[:thousands]
+	erb :change
 end
 
 get '/new_product' do

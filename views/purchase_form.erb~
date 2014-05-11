@@ -27,7 +27,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
-         <a class="navbar-brand" href="#">Aling Nena</a>
+         <a class="navbar-brand">Aling Nena</a>
 	 <a class="navbar-brand" href="/">Home</a>
 	 <a class="navbar-brand" href="/about">About</a>
 	 <a class="navbar-brand" href="/products">Products</a>
@@ -38,8 +38,8 @@
     <div class="container">
 
       <div class="jumbotron">
-        <h1><%= @product.new_record? ? "Create New Product" : "Purchase #{@product.name}" %></h1>
-        <form role="form" method="POST" action="<%= @product.new_record? ? '/create_product' : "/update_product/#{@product.id}" %>">
+        <h1><%= <!-- some sort of method for purchasing a la new_product method -->"Purchase #{@product.name}" %></h1>
+        <form role="form" method="POST" action=""/update_product/#{@product.id}" %>">
           <form class="form-horizontal" role="form">
             <div class="form-group">
               <label for="quantity" class="col-sm-2 control-label">Quantity</label>
@@ -47,13 +47,32 @@
                 <input type="text" class="form-control" name="quantity" placeholder="Enter desired quantity to purchase">
               </div>
             </div>
+	<form method="POST" action="/change">
+		<label for="ones">Ones: </label>
+		<input type="text" name="ones" />
+		<label for="fives">Fives: </label>
+		<input type="text" name="fives" />
+		<label for="tens">Tens: </label>
+		<input type="text" name="tens" />
+		<label for="twenties">Twenties: </label>
+		<input type="text" name="twenties" />
+		<label for="fifties">Fifties: </label>
+		<input type="text" name="fifties" />
+		<label for="hundreds">Hundreds: </label>
+		<input type="text" name="hundreds" />
+		<label for="five_hundreds">Five Hundreds: </label>
+		<input type="text" name="five hundreds" />
+		<label for="thousands">Thousands: </label>
+		<input type="text" name="thousands" />
+	</form>
             <div class="form-group">
               <div>
-                <center><button type="submit" class="btn btn-default btn-primary"><%= @product.new_record? ? "Create New Product" : "Purchase" %></button>
+                <center><button type="submit" class="btn btn-default btn-primary"><!-- same goes here, I believe... -->"Purchase"</button>
                 <a href="/products" class="btn btn-default">Back to Product List</a></center>
               </div>
             </div>
           </form>
+	<!-- calculator? -->
 
       </div>
 
